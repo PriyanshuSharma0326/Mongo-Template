@@ -3,7 +3,7 @@ import Products from "../Models/productsModel.js";
 
 const getAllProducts = (req, res) => {
     // res.status(200).json({ success: true, data: products });
-    res.status(200).json({ success: true, message: 'All Product' });
+    res.status(200).json({ success: true, message: 'All Products' });
 }
 
 const getSingleProduct = (req, res) => {
@@ -19,7 +19,14 @@ const getSingleProduct = (req, res) => {
 }
 
 const createProduct = (req, res) => {
-    res.status(200).json({ success: true, message: 'Create Product' });
+    new Products(req.body)
+    .save()
+    .then(() => {
+        res.status(200).json({ success: true, message: 'Product created!' });
+    })
+    .catch((err) => {
+        res.status(400).json({ success: true, message: err });
+    });
 }
 
 const updateProduct = (req, res) => {
