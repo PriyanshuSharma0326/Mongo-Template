@@ -8,7 +8,7 @@ const app = express();
 dotenv.config();
 const PORT = 5000;
 
-// app.use(express.static('./Client'));
+app.use(express.static('./Client'));
 // app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 // app.use(express.text());
