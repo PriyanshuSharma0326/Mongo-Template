@@ -7,7 +7,7 @@ create.addEventListener("click", (e) => {
     fetch("http://localhost:5000/api/v1/products/create", {
         method: "POST",
         headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/x-www-form-urlencoded",
         },
         body: new URLSearchParams(new FormData(form)),
     });
