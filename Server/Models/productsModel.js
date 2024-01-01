@@ -17,13 +17,13 @@ const productsSchema = new Schema(
             type: String,
             required: true,
             trim: true,
-            minLength: [10, 'Description must be atleast 10 characters'],
+            minLength: [5, 'Description must be atleast 5 characters'],
         },
         category: {
             type: String,
             required: true,
             trim: true,
-            minLength: [10, 'Description must be atleast 10 characters'],
+            minLength: [5, 'Description must be atleast 5 characters'],
         },
     },
     {

@@ -2,14 +2,16 @@ import express from 'express';
 import router from './Routes/productRoutes.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 const app = express();
 dotenv.config();
 const PORT = 5000;
 
-app.use(express.static('./Client'));
+app.use(express.static('../Client'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.status(200).send('<h1>Welcome to HTTP methods!</h1>')
