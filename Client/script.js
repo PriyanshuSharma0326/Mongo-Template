@@ -4,7 +4,7 @@ const allProducts = document.querySelector("#products");
 
 create.addEventListener("click", async (e) => {
     e.preventDefault();
-    let res = await fetch("http://localhost:5000/api/v1/products/create", 
+    let res = await fetch("https://prickly-calf-beret.cyclic.app/api/v1/products/create", 
         {
             method: "POST",
             headers: {

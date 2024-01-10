@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 
 async function getAllProducts() {
     try {
-        let res = await fetch("http://localhost:5000/api/v1/products");
+        let res = await fetch("https://prickly-calf-beret.cyclic.app/api/v1/products");
         let products = await res.json();
         let productsEle = products.data.map((product) => {
             return `
@@ -87,7 +87,7 @@ getAllProducts();
 async function deleteFun(event) {
     event.preventDefault();
     if (confirm("Are you sure to delete the product?")) {
-        await fetch(`http://localhost:5000/api/v1/products/delete/${event.target.id}`,
+        await fetch(`https://prickly-calf-beret.cyclic.app/api/v1/products/delete/${event.target.id}`,
             {
                 method: "DELETE",
             }
@@ -98,15 +98,14 @@ async function deleteFun(event) {
 
 async function displayProduct(event) {
     event.preventDefault();
-    let res = await fetch(`http://localhost:5000/api/v1/products/${event.target.id}`);
+    let res = await fetch(`https://prickly-calf-beret.cyclic.app/api/v1/products/${event.target.id}`);
     let product = await res.json();
 }
 
 async function updateProduct(event) {
     event.preventDefault();
     let updateForm = document.querySelector(`#form-update-${event.target.id}`);
-    console.log(updateForm);
-    let res = await fetch(`http://localhost:5000/api/v1/products/update/${event.target.id}`,
+    let res = await fetch(`https://prickly-calf-beret.cyclic.app/api/v1/products/update/${event.target.id}`,
         {
             method: "PUT",
             headers: {
